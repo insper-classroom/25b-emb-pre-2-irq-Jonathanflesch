@@ -6,7 +6,7 @@ const int pinled = 4;
 const int pinbtn = 28; 
 
 volatile int btnstate;
-volatile int change = 0;
+
 
 void gpio_callback(uint gpio, uint32_t events){
   if(events & 0x4){
@@ -27,6 +27,7 @@ int main() {
 
 
   while (true) {
+    int change = 0;
     if(btnstate){
       btnstate = 0;
       change ^= 1;
