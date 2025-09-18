@@ -27,6 +27,7 @@ int main() {
 
 
   while (true) {
+    sleep_ms(100);
     int change = 0;
     if(btnstate){
       btnstate = 0;
