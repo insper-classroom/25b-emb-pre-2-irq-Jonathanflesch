@@ -25,10 +25,8 @@ int main() {
   gpio_pull_up(pinbtn);
   gpio_set_irq_enabled_with_callback(pinbtn, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
 
-
-  while (true) {
-    sleep_ms(100);
-    int change = 0;
+  int change = 0;
+  while (true) {    
     if(btnstate){
       btnstate = 0;
       change ^= 1;
